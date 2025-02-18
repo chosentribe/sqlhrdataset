@@ -121,9 +121,10 @@ SELECT *
 		OR	Absences	IS NULL;
 	
 
-	
+'''
 -- DELETE FROM TABLE WILL BE MASIVE BECAUSE WE HAVE MANY NULL ROWS
 --INSTEAND WE REPLACE NULL VALUE
+sql'''
 
         SELECT *
 		FROM hrdatatable
@@ -177,7 +178,7 @@ SELECT *
 ---1 Write SQL quary to retrieve all columns for employee last 
 		--- performance was from '2017-04-06'
 
-		SELECT *
+	sql'''	SELECT *
 		FROM hrdatatable
 		WHERE lastperformancereview_date >= '2017-04-06'
 
@@ -213,20 +214,21 @@ SELECT *
 		FROM hrdatatable
 		WHERE salary >= 60000
 	    LIMIT 10
-
+sql'''
 		--6 Write a SQL query to find the total number employee in department 
 		--by each gender in each position
 
 
 
-		SELECT department, sex,
+	sql'''	SELECT department, sex,
 		COUNT(*) emp_total
 		FROM hrdatatable
 		GROUP BY  sex, department; 
 
-
+        sql'''
 		--7 Write SQL query to retrive the most populated 
 		--zip code location with employee 
+       sql'''
 
 		SELECT  zip, 
 		COUNT(empid) AS total_zip
@@ -234,35 +236,37 @@ SELECT *
 		GROUP BY 1
 		ORDER BY total_zip DESC
 
+      sql'''
+
 		--8 Write SQL query to calculate the 
 		--year and month with the highest termination
 
-		SELECT EXTRACT(YEAR FROM dateofhire) AS YEAR,
+    sql'''	    SELECT EXTRACT(YEAR FROM dateofhire) AS YEAR,
 		    EXTRACT(MONTH FROM dateofhire) AS MONTH,
 			COUNT(dateoftermination) AS highest_termination
 		FROM hrdatatable
 		GROUP BY 1,2
 		ORDER BY highest_termination DESC
 
-
+sql'''
 
 		--9 Write SQL query to top 5 highest paid employee
 
-		SELECT first_name, last_name, 
+ sql'''	        SELECT first_name, last_name, 
 		SUM(salary) AS highest_paid
 		FROM hrdatatable
 		GROUP BY 1,2
 		ORDER BY highest_paid DESC
 		LIMIT 5
-
+sql'''
 	   --**10Write SQL query find number of employee by department**
 
-	   SELECT 
+sql'''	   SELECT 
 	   department,
 	   COUNT(empid) AS number_employee
 	   FROM hrdatatable
 	   GROUP BY department
-
+sql'''
 	   --End of project
 	   
 
