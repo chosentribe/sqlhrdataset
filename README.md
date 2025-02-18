@@ -251,13 +251,13 @@ SELECT *
 
 		--9 Write SQL query to top 5 highest paid employee
 
- '''sql	        SELECT first_name, last_name, 
+ '''sql	       SELECT first_name, last_name, 
 		SUM(salary) AS highest_paid
 		FROM hrdatatable
 		GROUP BY 1,2
 		ORDER BY highest_paid DESC
-		LIMIT 5
-'''
+	'''	LIMIT 5
+
 	   --**10Write SQL query find number of employee by department**
 
 '''sql	   SELECT 
