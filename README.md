@@ -3,7 +3,6 @@
 ## Project Overview
 
 **Project Title**: HR Data Analysis  
-**Level**: Beginner  
 **Database**: `hrproject`
 
 This project is designed to demonstrate SQL skills and techniques typically used by data analysts to explore, clean, and analyze HR dataset. The project involves setting up a HR database, performing exploratory data analysis (EDA), and answering specific business questions through SQL queries. 
@@ -124,9 +123,9 @@ SELECT *
 '''
 -- DELETE FROM TABLE WILL BE MASIVE BECAUSE WE HAVE MANY NULL ROWS
 --INSTEAND WE REPLACE NULL VALUE
-sql'''
+'''sql
 
-        SELECT *
+                SELECT *
 		FROM hrdatatable
 
 		Update hrdatatable
@@ -178,57 +177,57 @@ sql'''
 ---1 Write SQL quary to retrieve all columns for employee last 
 		--- performance was from '2017-04-06'
 
-	sql'''	SELECT *
+'''sql	        SELECT *
 		FROM hrdatatable
 		WHERE lastperformancereview_date >= '2017-04-06'
-
+'''
 		--2 Write SQL query retrieve all data with 'production technician I'
 		-- and salary is more than 5000 from the month of '2015-04-06'
-
+'''sql
 		SELECT position, salary, lastperformancereview_date
 		FROM hrdatatable
 		WHERE position = 'Production Technician I'
 		AND salary >= 50000
 		AND lastperformancereview_date >= '2015-04-06'
 		ORDER BY salary DESC;
-
+'''
 		--3 Write sql query to calculate the total salary by each position
 
-		SELECT position, SUM(salary) AS total_salary
+''' sql         SELECT position, SUM(salary) AS total_salary
 		FROM hrdatatable
 		GROUP BY position
-
+'''
 
 		--4 Write SQL query to find the average salary of employee  who earns 
 		-- 'position' IT Support
 		
-		SELECT  AVG(salary) AS average_salary
+'''sql		SELECT  AVG(salary) AS average_salary
 		FROM hrdatatable
 		WHERE position = 'IT Support'
-
+'''
 
 		--5 Write a SQL query to find all salary 
 		--where the salary is greater than 60000
 
-        SELECT first_name, last_name, salary
+ ''' sql        SELECT first_name, last_name, salary
 		FROM hrdatatable
 		WHERE salary >= 60000
 	    LIMIT 10
-sql'''
+'''sql
 		--6 Write a SQL query to find the total number employee in department 
 		--by each gender in each position
 
 
 
-	sql'''	SELECT department, sex,
+'''sql	        SELECT department, sex,
 		COUNT(*) emp_total
 		FROM hrdatatable
 		GROUP BY  sex, department; 
 
-        sql'''
+'''
 		--7 Write SQL query to retrive the most populated 
 		--zip code location with employee 
-       sql'''
+       '''sql
 
 		SELECT  zip, 
 		COUNT(empid) AS total_zip
@@ -236,37 +235,37 @@ sql'''
 		GROUP BY 1
 		ORDER BY total_zip DESC
 
-      sql'''
+      '''
 
 		--8 Write SQL query to calculate the 
 		--year and month with the highest termination
 
-    sql'''	    SELECT EXTRACT(YEAR FROM dateofhire) AS YEAR,
+    '''	sql    SELECT EXTRACT(YEAR FROM dateofhire) AS YEAR,
 		    EXTRACT(MONTH FROM dateofhire) AS MONTH,
 			COUNT(dateoftermination) AS highest_termination
 		FROM hrdatatable
 		GROUP BY 1,2
 		ORDER BY highest_termination DESC
 
-sql'''
+'''
 
 		--9 Write SQL query to top 5 highest paid employee
 
- sql'''	        SELECT first_name, last_name, 
+ '''sql	        SELECT first_name, last_name, 
 		SUM(salary) AS highest_paid
 		FROM hrdatatable
 		GROUP BY 1,2
 		ORDER BY highest_paid DESC
 		LIMIT 5
-sql'''
+'''
 	   --**10Write SQL query find number of employee by department**
 
-sql'''	   SELECT 
+'''sql	   SELECT 
 	   department,
 	   COUNT(empid) AS number_employee
 	   FROM hrdatatable
 	   GROUP BY department
-sql'''
+'''
 	   --End of project
 	   
 
@@ -274,12 +273,11 @@ sql'''
 
 - **Employee Demographics**: The dataset includes employees from various States in Amarica, with position distributed across different department such as IT/IS, Sales and Production.
 - **Salary level across Departments**: Several department had a total salary amount greater than 60000, indicating high paying Salary.
-- **Sales Trends**: Monthly analysis shows variations in sales, helping identify peak seasons.
-- **Customer Insights**: The analysis identifies the top-spending customers and the most popular product categories.
+- **Employee Insights**: The analysis identifies the top-earnings and the most popular Department.
 
 ## Reports
 
-- **Sales Summary**: A detailed report summarizing total sales, customer demographics, and category performance.
+- **Employee Summary**: A detailed report summarizing employee demographics, and department.
 - **Trend Analysis**: Insights into gender trends across different department shows more female are in production.
 - **Employee Insights**: Reports on top employee and unique salary sum per departments.
 
@@ -298,7 +296,7 @@ This project serves as a comprehensive introduction to SQL for data analysts, co
 
 This project is part of my portfolio, showcasing the SQL skills essential for data analyst roles. If you have any questions, feedback, or would like to collaborate, feel free to get in touch!
 
-### Stay Updated and Join the Community
+
 
 For more content on SQL, data analysis, and other data-related topics, make sure to follow me on social media and join our community:
 
