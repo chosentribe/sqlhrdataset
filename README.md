@@ -271,13 +271,13 @@ SELECT *
 
 ## Findings
 
-- **Employee Demographics**: The dataset includes employees from various States in Amarica, with position distributed across different department such as IT/IS, Sales and Production.
+- **Employee Demographics**: The dataset includes employees from various States in Amarica, with position distributed across different department such as IT/IS and Production.
 - **Salary level across Departments**: Several department had a total salary amount greater than 60000, indicating high paying Salary.
 - **Employee Insights**: The analysis identifies the top-earnings and the most popular Department.
 
 ## Reports
 
-- **Employee Summary**: A detailed report summarizing employee demographics, and department.
+- **Employee Summary**: A detailed report summarizing employee demographics and department.
 - **Trend Analysis**: Insights into gender trends across different department shows more female are in production.
 - **Employee Insights**: Reports on top employee and unique salary sum per departments.
 
